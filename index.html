@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Часовий банер</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .time-banner {
+            background-color: hwb(219 15% 5%);
+            color: white;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .time-banner h2 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .time {
+            font-size: 3em;
+            font-weight: bold;
+        }
+
+        /* Додано стилі для бігучої стрічки */
+        .scrolling-banner {
+            white-space: nowrap;
+            overflow: hidden;
+            box-sizing: border-box;
+            background-color: rgb(39, 110, 241);
+            color: white;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+
+        .scrolling-banner::before {
+            content: 'ПУТІН ХУЙЛО!  ВСІМОСКАЛІ ПІДАРАСИ!   Азіатська сесія (Токіо) 23:00 - 08:00 GMT, Європейська сесія (Лондон) 08:00 - 17:00 GMT, Американська сесія (Нью-Йорк) 13:00 - 22:00 GMT, Тихоокеанська сесія (Сідней) 21:00 - 06:00 GMT';
+            display: inline-block;
+            animation: scroll-banner 30s linear infinite;
+        }
+
+        @keyframes scroll-banner {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+    <script>
+        function updateTimes() {
+            var now = new Date();
+
+            var timeNewYork = now.toLocaleTimeString("en-US", {timeZone: "America/New_York", hour12: false});
+            var timePrague = now.toLocaleTimeString("en-US", {timeZone: "Europe/Prague"});  
+            var timeKyiv = now.toLocaleTimeString("en-US", {timeZone: "Europe/Kiev"});
+
+            document.getElementById("timeNewYork").textContent = timeNewYork;
+            document.getElementById("timePrague").textContent = timePrague;
+            document.getElementById("timeKyiv").textContent = timeKyiv;
+        }
+
+        setInterval(updateTimes, 1000);
+    </script>
+</head>
+<body>
+    <!-- Бігуча стрічка з даними -->
+    <div class="scrolling-banner"></div>
+
+    <!-- Часові банери -->
+    <div class="time-banner">
+        <h2>Нью-Йорк</h2>
+        <p class="time" id="timeNewYork"></p>
+    </div>
+
+    <div class="time-banner">
+        <h2>Прага</h2>
+        <p class="time" id="timePrague"></p>
+    </div>
+
+    <div class="time-banner">
+        <h2>Київ</h2>
+        <p class="time" id="timeKyiv"></p>
+    </div>
+</body>
+</html>
