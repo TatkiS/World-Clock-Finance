@@ -29,7 +29,6 @@
             font-weight: bold;
         }
 
-        /* Стилі для бігучої стрічки */
         .scrolling-banner {
             white-space: nowrap;
             overflow: hidden;
@@ -41,7 +40,7 @@
         }
 
         .scrolling-banner::before {
-            content: ' ПУТІН ХУЙЛО!  ВСІ МОСКАЛІ ПІДАРАСИ!  Азіатська сесія (Токіо) 23:00 - 08:00 GMT, Європейська сесія (Лондон) 08:00 - 17:00 GMT, Американська сесія (Нью-Йорк) 13:00 - 22:00 GMT, Тихоокеанська сесія (Сідней) 21:00 - 06:00 GMT';
+            content: '   Азіатська сесія (Токіо) 23:58 - 08:58 CET, Європейська сесія (Лондон) 08:58 - 17:58 CET, Американська сесія (Нью-Йорк) 13:58 - 22:58 CET, Тихоокеанська сесія (Сідней) 21:58 - 06:58 CET';
             display: inline-block;
             animation: scroll-banner 30s linear infinite;
         }
@@ -74,10 +73,8 @@
     </script>
 </head>
 <body>
-    <!-- Бігуча стрічка з даними -->
     <div class="scrolling-banner"></div>
 
-    <!-- Часові банери -->
     <div class="time-banner">
         <h2>Нью-Йорк</h2>
         <p class="time" id="timeNewYork"></p>
@@ -92,22 +89,20 @@
         <h2>Київ</h2>
         <p class="time" id="timeKyiv"></p>
     </div>
-	
-        <!-- Додаткові часові банери для сесій -->
-        <div class="session-banner">
-            <h3>Токіо</h3>
-            <p class="session-time" id="timeTokyo"></p>
-        </div>
 
-        <div class="session-banner">
-            <h3>Лондон</h3>
-            <p class="session-time" id="timeLondon"></p>
-        </div>
+    <div class="session-banner">
+        <h3>Токіо</h3>
+        <p class="session-time" id="timeTokyo"></p>
+    </div>
 
+    <div class="session-banner">
+        <h3>Лондон</h3>
+        <p class="session-time" id="timeLondon"></p>
+    </div>
 
-        <div class="session-banner">
-            <h3>Сідней</h3>
-            <p class="session-time" id="timeSydney"></p>
-        </div>
-    </body>
+    <div class="session-banner">
+        <h3>Сідней</h3>
+        <p class="session-time" id="timeSydney"></p>
+    </div>
+</body>
 </html>
